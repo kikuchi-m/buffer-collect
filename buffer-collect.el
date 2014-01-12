@@ -21,7 +21,7 @@ If a pattern contains white space, escape it with backslash."
                        (read-string "Buffer type: " default-str nil default-str))))
   (setq bc:type-list (split-string type-str)))
 
-(defun collect-buffers (&optional type-str)
+(defun bc:collect-buffers (&optional type-str)
   "Parameter TYPE-STR is same as `bc:set-type-list'."
   (let ((p (progn
              (when type-str (setq bc:type-list (split-string type-str)))
