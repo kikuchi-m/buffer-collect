@@ -7,7 +7,7 @@
       (let ((ex-regexp "^\\.\\([a-zA-Z0-9]+\\)$"))
         (mapconcat (lambda (ex)
                      (if (string-match ex-regexp ex)
-                         (replace-regexp-in-string ex-regexp "\\\\.\\1\\\\'" ex)
+                         (replace-regexp-in-string ex-regexp "\\\\.\\1\\\\($\\\\|<.*>\\\\)" ex)
                        (regexp-opt (cons ex nil))))
                    bc:type-list
                    "\\|"))
